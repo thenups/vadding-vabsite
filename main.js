@@ -6,7 +6,16 @@ var dict = {
 
 function whichSite(psw) {
 
-    while (psw !== password) {
-        alert("Incorrect Password");
-        return promptPass();
-}
+    var psw = prompt("Please enter your password:");
+
+    try {
+        var val = dict[psw]
+        console.log(val);
+    }
+    catch(err) {
+        while (err) {
+            alert("Incorrect Password");
+            return promptPass();
+    }
+
+};
