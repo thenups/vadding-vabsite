@@ -13,13 +13,22 @@ CORS(app)
 
 @app.route('/check/<pwd>')
 def check(pwd):
-    paneer = ['saag','tandoori','masala']
 
+    p = pwd.lower()
+    paneer = ['saag','tandoori','masala','tikka','kebab','kofta','cutlet']
+
+    ### MATHUR ###
+    # Sangeet/Wedding/Reception/Friendception - tikka
+    # Sangeet/Wedding/Reception - kebab
+    # Wedding/Reception - kofta
+    # Reception - cutlet
+
+    ### MURTHY ###
     # Wedding/Reception - Saag
     # Sangeet/Wedding/Reception - Tandoori
     # Sangeet/wedding/reception/friendception - Masala
 
-    if pwd in paneer:
+    if p in paneer:
         return jsonify(True)
     else:
         return jsonify(False)
